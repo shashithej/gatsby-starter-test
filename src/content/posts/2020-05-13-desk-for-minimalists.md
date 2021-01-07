@@ -3,51 +3,255 @@ template: blog-post
 title: Desk for minimalists
 slug: /minimalists-desk
 date: 2020-05-13 12:46
-description: sdasd
+description: ghdjfg
 featuredImage: /assets/bench-accounting-nvzvopqw0gc-unsplash.jpg
 ---
-Uh, is the puppy mechanical in any way? Maybe I love you so much I love you no matter who you are pretending to be. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right. I found what I need. And it's not friends, it's things.
+<!--StartFragment-->
 
-That's the ONLY thing about being a slave. OK, if everyone's finished being stupid. Bender, we're trying our best. Fry! Stay back! He's too powerful! I just told you! **You've killed me!** *And yet you haven't said what I told you to say!* How can any of us trust you?
+|                                       |                                                                                                                                 |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| <center><div id="numerologyCalcForm"> |                                                                                                                                 |
+|                                       | <h3>Enter your Date of Birth</h3>                                                                                               |
+|                                       | <form id="numeroCalc">                                                                                                          |
+|                                       | <input type="text" oninput="calculateNumber()" id="day" value="" maxlength="2" placeholder="Day">                               |
+|                                       | <select id="month" value="" onchange="calculateNumber()">                                                                       |
+|                                       | <option value="0">Select&#8230;</option>                                                                                        |
+|                                       | <option value="1">January</option>                                                                                              |
+|                                       | <option value="2">February</option>                                                                                             |
+|                                       | <option value="3">March</option>                                                                                                |
+|                                       | <option value="4">April</option>                                                                                                |
+|                                       | <option value="5">May</option>                                                                                                  |
+|                                       | <option value="6">June</option>                                                                                                 |
+|                                       | <option value="7">July</option>                                                                                                 |
+|                                       | <option value="8">August</option>                                                                                               |
+|                                       | <option value="9">September</option>                                                                                            |
+|                                       | <option value="10">October</option>                                                                                             |
+|                                       | <option value="11">November</option>                                                                                            |
+|                                       | <option value="12">December</option>                                                                                            |
+|                                       | </select>                                                                                                                       |
+|                                       | <input type="text" oninput="calculateNumber()" id="year" value="" maxlength="4" placeholder="Year">                             |
+|                                       | </form>                                                                                                                         |
+|                                       | <div id="outputText"><h3></h3></div>                                                                                            |
+|                                       | <button id="btnToStore" onclick="directNumerology()" disabled="">Get Free Report</button>                                       |
+|                                       | </div>                                                                                                                          |
+|                                       | <script>var theForm = document.forms\["numeroCalc"];                                                                            |
+|                                       | var day = theForm.elements\["day"];                                                                                             |
+|                                       | var month = theForm.elements\["month"];                                                                                         |
+|                                       | var year = theForm.elements\["year"];                                                                                           |
+|                                       | var birthNumber = 0;                                                                                                            |
+|                                       | function calculateNumber()                                                                                                      |
+|                                       | {                                                                                                                               |
+|                                       | //Instantiate Variables.                                                                                                        |
+|                                       | theForm = document.forms\["numeroCalc"];                                                                                        |
+|                                       | day = theForm.elements\["day"];                                                                                                 |
+|                                       | month = theForm.elements\["month"];                                                                                             |
+|                                       | year = theForm.elements\["year"];                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | if (validate(day, month, year))                                                                                                 |
+|                                       | {                                                                                                                               |
+|                                       | // Calculate Birth Number.                                                                                                      |
+|                                       | birthNumber = calcString(day.value)+calcString(month.value)+calcString(year.value);                                             |
+|                                       | birthNumber = calcString(birthNumber.toString());                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | document.getElementById("outputText").innerHTML = "<h3>Your Numerology Number is: " + birthNumber + "</h3>";                    |
+|                                       | document.getElementById("btnToStore").disabled = false;                                                                         |
+|                                       |                                                                                                                                 |
+|                                       | }                                                                                                                               |
+|                                       | else                                                                                                                            |
+|                                       | {                                                                                                                               |
+|                                       | document.getElementById("btnToStore").disabled = true;                                                                          |
+|                                       | document.getElementById("outputText").innerHTML = "";                                                                           |
+|                                       | document.getElementById("outputText").innerHTML = "<h3></h3>";                                                                  |
+|                                       | }                                                                                                                               |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | // Checks if int value of string is greater than 9.                                                                             |
+|                                       | // If so, it passes to be calculated sequentially.                                                                              |
+|                                       | function calcString(strValue)                                                                                                   |
+|                                       | {                                                                                                                               |
+|                                       | while (parseInt(strValue) > 9)                                                                                                  |
+|                                       | {                                                                                                                               |
+|                                       | strValue = addStringSequentially(strValue)                                                                                      |
+|                                       | }                                                                                                                               |
+|                                       | return parseInt(strValue);                                                                                                      |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | // Calculates value of string based on int value.                                                                               |
+|                                       | function addStringSequentially(strNum)                                                                                          |
+|                                       | {                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | var placeholder = 0;                                                                                                            |
+|                                       | for(var i=0; i<strNum.length; i++)                                                                                              |
+|                                       | {                                                                                                                               |
+|                                       | placeholder += parseInt(strNum.charAt(i));                                                                                      |
+|                                       | }                                                                                                                               |
+|                                       | return placeholder.toString();                                                                                                  |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | function validate(day, month, year)                                                                                             |
+|                                       | {                                                                                                                               |
+|                                       | var dayVal = false;                                                                                                             |
+|                                       | var monthVal = false;                                                                                                           |
+|                                       | var yearVal = false;                                                                                                            |
+|                                       | if(!isNaN(parseInt(day.value)) &#038;&#038; parseInt(day.value) <= 31 &#038;&#038; parseInt(day.value) >=1)                     |
+|                                       | {                                                                                                                               |
+|                                       | day.style.backgroundColor = "#eee";                                                                                             |
+|                                       | dayVal = true;                                                                                                                  |
+|                                       | }else{                                                                                                                          |
+|                                       | if(day.value == ""){day.style.backgroundColor = "#eee";}                                                                        |
+|                                       | else{day.style.backgroundColor = "rgba\(255,0,0,0.1\)";}                                                                        |
+|                                       | day.innerHTML = "Please enter a valid birth date";                                                                              |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | if(!isNaN(parseInt(year.value)) && parseInt(year.value) <= (new Date().getFullYear()) &#038;&#038; parseInt(year.value) >=1900) |
+|                                       | {                                                                                                                               |
+|                                       | year.style.backgroundColor = "#eee";                                                                                            |
+|                                       | yearVal = true;                                                                                                                 |
+|                                       | }else{                                                                                                                          |
+|                                       | if(year.value == ""){year.style.backgroundColor = "#eee";}                                                                      |
+|                                       | else{year.style.backgroundColor = "rgba\(255,0,0,0.1\)";}                                                                       |
+|                                       | year.innerHTML = "Please enter a valid birth date";                                                                             |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | if(parseInt(month.value) != 0)                                                                                                  |
+|                                       | {                                                                                                                               |
+|                                       | monthVal = true;                                                                                                                |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | if (dayVal && monthVal && yearVal)                                                                                              |
+|                                       | {                                                                                                                               |
+|                                       | return true;                                                                                                                    |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | return false;                                                                                                                   |
+|                                       | }                                                                                                                               |
+|                                       |                                                                                                                                 |
+|                                       | function directNumerology()                                                                                                     |
+|                                       | {                                                                                                                               |
+|                                       | window.location="https://42437gp20bk7mbq53jjf6kgl4b.hop.clickbank.net/?tid=G";                                                  |
+|                                       | }</script></center>                                                                                                             |
 
-![Royal Mail](/assets/royal-mail-unsplash.jpg "Royal Mail from Unsplash")
+<!--EndFragment-->
 
-## It doesn't look so shiny to me.
+```
+<center><div id="numerologyCalcForm">
+<h3>Enter your Date of Birth</h3>
+<form id="numeroCalc">
+<input type="text" oninput="calculateNumber()" id="day" value="" maxlength="2" placeholder="Day">
+  <select id="month" value="" onchange="calculateNumber()">
+    <option value="0">Select&#8230;</option>
+    <option value="1">January</option>
+    <option value="2">February</option>
+    <option value="3">March</option>
+    <option value="4">April</option>
+    <option value="5">May</option>
+    <option value="6">June</option>
+    <option value="7">July</option>
+    <option value="8">August</option>
+    <option value="9">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select>
+  <input type="text" oninput="calculateNumber()" id="year" value="" maxlength="4" placeholder="Year">
+</form>
+  <div id="outputText"><h3></h3></div>
+<button id="btnToStore" onclick="directNumerology()" disabled="">Get Free Report</button>
+</div>
+<script>var theForm = document.forms["numeroCalc"];
+var day = theForm.elements["day"];
+var month = theForm.elements["month"];
+var year = theForm.elements["year"];
+var birthNumber = 0;
+function calculateNumber()
+{
+  //Instantiate Variables.
+  theForm = document.forms["numeroCalc"];
+  day = theForm.elements["day"];
+  month = theForm.elements["month"];
+  year = theForm.elements["year"];
+  
+  if (validate(day, month, year))
+  {
+    // Calculate Birth Number.
+    birthNumber = calcString(day.value)+calcString(month.value)+calcString(year.value);
+    birthNumber = calcString(birthNumber.toString());
+     
+    document.getElementById("outputText").innerHTML = "<h3>Your Numerology Number is: " + birthNumber + "</h3>";
+    document.getElementById("btnToStore").disabled = false;
+ 
+    }
+  else
+  {
+      document.getElementById("btnToStore").disabled = true;
+      document.getElementById("outputText").innerHTML = "";
+    document.getElementById("outputText").innerHTML = "<h3></h3>";
+  }
+}
 
-No! I want to live! There are still too many things I don't own! It doesn't look so shiny to me. I'm just glad my fat, ugly mama isn't alive to see this day. Soon enough. I'm sure those windmills will keep them cool.
+// Checks if int value of string is greater than 9.
+// If so, it passes to be calculated sequentially.
+function calcString(strValue)
+{
+  while (parseInt(strValue) > 9)
+    {
+      strValue = addStringSequentially(strValue)
+    }
+  return parseInt(strValue);
+}
 
-![]()
+// Calculates value of string based on int value.
+function addStringSequentially(strNum)
+{
+  
+  var placeholder = 0;
+  for(var i=0; i<strNum.length; i++)
+    {
+      placeholder += parseInt(strNum.charAt(i));
+    }
+  return placeholder.toString();
+}
 
-1. Guards! Bring me the forms I need to fill out to have her taken away!
-2. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
-3. You, a bobsleder!? That I'd like to see!
+function validate(day, month, year)
+{
+  var dayVal = false;
+  var monthVal = false;
+  var yearVal = false;
+  if(!isNaN(parseInt(day.value)) &#038;&#038; parseInt(day.value) <= 31 &#038;&#038; parseInt(day.value) >=1)
+    {
+      day.style.backgroundColor = "#eee";
+      dayVal = true;
+    }else{
+      if(day.value == ""){day.style.backgroundColor = "#eee";}
+      else{day.style.backgroundColor = "rgba\(255,0,0,0.1\)";}
+      day.innerHTML = "Please enter a valid birth date";
+    }
+  
+  if(!isNaN(parseInt(year.value)) && parseInt(year.value) <= (new Date().getFullYear()) &#038;&#038; parseInt(year.value) >=1900)
+    {
+      year.style.backgroundColor = "#eee";
+      yearVal = true;
+    }else{
+      if(year.value == ""){year.style.backgroundColor = "#eee";}
+      else{year.style.backgroundColor = "rgba\(255,0,0,0.1\)";}
+      year.innerHTML = "Please enter a valid birth date";
+    }
+  
+  if(parseInt(month.value) != 0)
+    {
+      monthVal = true;
+    }
+  
+  if (dayVal && monthVal && yearVal)
+    {
+      return true;
+    }
 
-### Daylight and everything.
+  return false;
+}
 
-A true inspiration for the children. Anyone who laughs is a communist! Can I use the gun? Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo!
-
-* Fry! Stay back! He's too powerful!
-* Look, last night was a mistake.
-* Please, Don-Bot… look into your hard drive, and open your mercy file!
-
-And I'm his friend Jesus. One hundred dollars. There, now he's trapped in a book I wrote: a crummy world of plot holes and spelling errors! No! The cat shelter's on to me.
-
-Fry! Quit doing the right thing, you jerk! I'm sure those windmills will keep them cool. I'm Santa Claus! Leela's gonna kill me. Then we'll go with that data file!
-
-That's right, baby. I ain't your loverboy Flexo, the guy you love so much. You even love anyone pretending to be him! Bite my shiny metal ass. Tell them I hate them. Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments."
-
-That's a popular name today. Little "e", big "B"? Hey, whatcha watching? A sexy mistake. A true inspiration for the children. Shut up and get to the point!
-
-Ven ve voke up, ve had zese wodies. Oh, all right, I am. But if anything happens to me, tell them I died robbing some old man. So, how 'bout them Knicks? Oh Leela! You're the only person I could turn to; you're the only person who ever loved me.
-
-Shut up and get to the point! Take me to your leader! I can explain. It's very valuable. You guys realize you live in a sewer, right?
-
-Robot 1-X, save my friends! And Zoidberg! Oh Leela! You're the only person I could turn to; you're the only person who ever loved me. I guess because my parents keep telling me to be more ladylike. As though!
-
-I daresay that Fry has discovered the smelliest object in the known universe! Oh right. I forgot about the battle. Oh dear! She's stuck in an infinite loop, and he's an idiot! Well, that's love for you.
-
-You wouldn't. Ask anyway! Is today's hectic lifestyle making you tense and impatient? Ven ve voke up, ve had zese wodies. Doomsday device? Ah, now the ball's in Farnsworth's court!
-
-Fatal. Maybe I love you so much I love you no matter who you are pretending to be. Really?! You can see how I lived before I met you. Alright, let's mafia things up a bit. Joey, burn down the ship. Clamps, burn down the crew.
-
-Enough about your promiscuous mother, Hermes! We have bigger problems. Bender, being God isn't easy. If you do too much, people get dependent on you, and if you do nothing, they lose hope. You have to use a light touch. Like a safecracker, or a pickpocket.
+function directNumerology()
+{
+  window.location="https://42437gp20bk7mbq53jjf6kgl4b.hop.clickbank.net/?tid=G";
+}</script></center>
+```
